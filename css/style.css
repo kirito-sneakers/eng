@@ -1392,8 +1392,8 @@ footer {
     line-height: 30px;
     h1 {
         text-transform: uppercase;
-        margin-bottom: 50px;
-        font-size: 40px;
+        margin-bottom: 70px;
+        font-size: 45px;
     }
     ol {
         max-width: 700px;
@@ -1836,12 +1836,14 @@ footer {
     .about-us {
         h1 {
             font-size: 30px;
+            margin-bottom: 70px;
         }
         ol {
             gap: 40px;
             li {
                 h2 {
-                    font-size: 25px; 
+                    font-size: 22px; 
+                    margin-bottom: 10px;
                 }
                 p {
                     font-size: 15px;
@@ -2003,12 +2005,12 @@ footer {
 
     .about-us {
         h1 {
-            margin-bottom: 40px;
+            margin-bottom: 70px;
         }
         ol {
             li {
                 h2 {
-                    font-size: 25px; 
+                    font-size: 20px; 
                 }
                 p {
                     font-size: 15px;

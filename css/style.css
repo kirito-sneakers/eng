@@ -1549,6 +1549,8 @@ footer {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
+                list-style-type: none;
+                padding-left: 0;
                 li span {
                     font-size: 24px;
                     font-weight: 600;
@@ -1936,6 +1938,13 @@ footer {
             .descr {
                 font-size: 17px;
                 gap: 30px;
+                ul {
+                    li {
+                        span.total-price {
+                            font-size: 20px;
+                        }
+                    }
+                }
             }
             .about-qlt {
                 font-size: 17px;

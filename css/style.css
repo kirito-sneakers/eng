@@ -1500,7 +1500,7 @@ footer {
                     height: 100%;
                     max-width: none;
                     max-height: none;
-                    object-fit: cover;
+                    min-height: 500px;
                     display: block;
                 }
             }
@@ -1798,6 +1798,7 @@ footer {
         .item-info {
             h2 {
                 font-size: 25px;
+                height: 60px;
             }
         }
         .galary {
@@ -1953,7 +1954,7 @@ footer {
         align-items: center;
         gap: 0px;
         .galary {
-            max-width: 350px;
+            width: 350px;
             div {
                 gap: 10px;
                 a {
@@ -1969,6 +1970,11 @@ footer {
                     max-width: 300px;
                     margin: 0 auto;
                 }
+                &:first-child {
+                    img {
+                        min-height: 350px;
+                    }
+                }
             }
         }
         .item-info {
@@ -1976,6 +1982,7 @@ footer {
             padding-top: 50px;
             h2 {
                 font-size: 20px;
+                height: 50px;
             }
             .descr {
                 font-size: 17px;
@@ -2067,5 +2074,9 @@ footer {
                 width: 70%;
             }
         }
+    }
+    .item {
+        padding-right: 30px;
+        padding-left: 30px;
     }
 }

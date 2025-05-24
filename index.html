@@ -183,21 +183,6 @@
         </div>
     `;
 
-
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-
-  if (currentScroll > lastScroll && currentScroll > 100) {
-    // Скролл вниз
-    header.classList.add('hide');
-  } else {
-    // Скролл вверх
-    header.classList.remove('hide');
-  }
-
-  lastScroll = currentScroll;
-});
     document.querySelector('body').prepend(header);
 
     const footer = document.createElement('footer');
@@ -234,7 +219,22 @@
 const burger = document.querySelector('#burger');
 const mbNav = document.querySelector('#mobile-nav');
 
+let lastScroll = 0;
 let scrollTop = 0;
+
+window.addEventListener('scroll', () => {
+  if (mbNav.classList.contains('nav-opened')) return;
+
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    header.classList.add('hide');
+  } else {
+    header.classList.remove('hide');
+  }
+
+  lastScroll = currentScroll;
+});
 
 burger.addEventListener('click', () => {
   const isOpen = mbNav.classList.toggle('nav-opened');
@@ -244,11 +244,20 @@ burger.addEventListener('click', () => {
     document.body.style.position = 'fixed';
     document.body.style.top = `-${scrollTop}px`;
     document.body.style.width = '100%';
+    header.classList.remove('hide');
   } else {
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
-    window.scrollTo(0, scrollTop); // ← это возвращает скролл
+
+    // 🔥 Ключ: отключаем smooth scroll
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo(0, scrollTop);
+
+    // И восстанавливаем smooth на след. тик
+    setTimeout(() => {
+      document.documentElement.style.scrollBehavior = '';
+    }, 0);
   }
 });
 

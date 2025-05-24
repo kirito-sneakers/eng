@@ -2,6 +2,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const header = document.createElement('header');
     header.innerHTML = `
+    <nav class="header-info">
+        <a>Home</a>
+    </nav>
     <a href="./../" class="logo-icon">
         <img src="./../img/logotype.png" alt="Logo">
     </a>
@@ -21,9 +24,9 @@ window.addEventListener('DOMContentLoaded', () => {
     footer.innerHTML = `
         <div class="footer-logo"><a href="./../"><img src="./../img/logotype.png" alt=""></a></div>
         <div class="footer-info">
-            <a href="https://t.me/kirito_ls" class="oswald-light" target="_blank">Contact us</a>
-            <a href="./../info.html" class="oswald-light">About us</a>
-            <a href="./../" class="oswald-light">Shop</a>
+            <a href="https://t.me/kirito_ls" class="oswald-light" target="_blank">написати нам</a>
+            <a href="./../info.html" class="oswald-light">про нас</a>
+            <a href="./../" class="oswald-light">Магазин</a>
         </div>
         <div class="footer-contacts">
             <a href="https://www.instagram.com/kirito_sneakers/" target="_blank">

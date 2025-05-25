@@ -2159,6 +2159,9 @@ footer {
     #mobile-nav {
         top: 63.19px;
     }
+    .overlay {
+        top: 63.19px;
+    }
     .section-header {
         .brand-logo-main {
             p {
@@ -2178,9 +2181,18 @@ footer {
         .header-icons {
             gap: 15px;
             right: 20px;
-            a {
-                height: 30px;
-                width: 30px;
+            .saved-icon {
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+        }
+        }
+        .burger {
+            height: 22px;
+            width: 27px;
+            span {
+                height: 3px;
             }
         }
     }
@@ -2323,6 +2335,9 @@ footer {
 }
 
 @media (max-width: 397px) {
+    #mobile-nav {
+        width: 70%;
+    }
     .section-header {
         .brand-logo-main {
             p {

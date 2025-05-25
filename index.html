@@ -292,6 +292,8 @@ function switchLanguage(newLang) {
   let newUrl = newLang
     ? currentUrl.replace(/\/(eng|ukr|rus)\//, `/${newLang}/`)
     : currentUrl.replace(/\/(eng|ukr|rus)\//, '/');
+
+    window.location.href = newUrl;
 }
 
 

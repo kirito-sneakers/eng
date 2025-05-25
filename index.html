@@ -65,12 +65,17 @@
     
 <body>
     <nav id="mobile-nav" class="">
-        <div>
-            <div>asdasdasd</div>
-            <a href="">asd</a>
-            <a href="">asd</a>
-            <a href="">asd</a>
-        </div>
+        <div class="oswald-medium">menu</div>
+        <a href="" class="montserrat-light">Store</a>
+        <a href="" class="montserrat-light">About us</a>
+        <a href="" class="montserrat-light">Contact us</a>
+        <div class="oswald-medium">brands</div>
+        <a href="" class="montserrat-light">Balenciaga</a>
+        <a href="" class="montserrat-light">Rick Owens</a>
+        <div class="oswald-medium">Language</div>
+        <a href="" class="montserrat-light">Eng</a>
+        <a href="" class="montserrat-light">Ukr</a>
+        <a href="" class="montserrat-light">Rus</a>
     </nav>
     <div class="overlay"></div>
         <section class="seo-text visually-hidden">
@@ -211,6 +216,26 @@
     `;
     document.querySelector('body').append(footer);
 
+    // const mobileNav = document.createElement('nav');
+    // mobileNav.id = 'mobile-nav';
+    // mobileNav.className = '';
+    // mobileNav.innerHTML = `
+    //     <div>
+    //         <div>asdasdasd</div>
+    //         <a href="">asd</a>
+    //         <a href="">asd</a>
+    //         <a href="">asd</a>
+    //     </div>
+    // `;
+
+    // // Создаём overlay
+    // const mobileOverlay = document.createElement('div');
+    // mobileOverlay.className = 'overlay';
+
+    // // Добавляем в body
+    // document.body.appendChild(mobileNav);
+    // document.body.appendChild(mobileOverlay);
+
 const burger = document.querySelector('#burger');
 const mbNav = document.querySelector('#mobile-nav');
 const overlay = document.querySelector('.overlay');
@@ -244,7 +269,7 @@ function closeMenu() {
     document.body.style.width = '';
     overlay.classList.remove('nav-opened')
 
-    // 🔥 Ключ: отключаем smooth scroll
+    // Ключ: отключаем smooth scroll
     document.documentElement.style.scrollBehavior = 'auto';
     window.scrollTo(0, scrollTop);
 

@@ -47,7 +47,7 @@ main {
 #mobile-nav {
     position: fixed;
     background-color: white;
-    height: 100vh;
+    height: 100%;
     top: 79.61px;
     transform: translateX(-100%);
     width: 50%;

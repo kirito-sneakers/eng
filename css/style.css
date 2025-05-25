@@ -24,15 +24,35 @@ main {
     overflow: hidden;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    right: 0px;
+    background-color: #000;
+    z-index: 99;
+    top: 79.61px;
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden; /* Вместо display: none */
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+.overlay.nav-opened {
+    visibility: visible;
+    opacity: 0.4;
+}
+
 #mobile-nav {
     position: fixed;
     background-color: white;
     height: 100vh;
-    top: 80px;
+    top: 79.61px;
     transform: translateX(-100%);
-    width: 100%;
+    width: 50%;
     z-index: 99999;
-    transition: 0.7s;
+    transition: 0.3s;
 }
 
 #mobile-nav.nav-opened {
@@ -1130,8 +1150,8 @@ header {
     .burger {
         position: absolute;
         left: 40px;
-        width: 35px;
-        height: 25px;
+        width: 40px;
+        height: 30px;
         background: transparent;
         cursor: pointer;
         display: none;
@@ -1185,7 +1205,7 @@ header {
 
     .burger input:checked ~ span:nth-of-type(3) {
         transform: rotate(-45deg);
-        top: 25.5px;
+        top: 28.2px;
         left: 4px;
     }
     * {
@@ -1211,6 +1231,12 @@ header {
         right: 40px;
         top: 50%;
         transform: translateY(-50%);
+        .saved-icon {
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
     }
 
     .header-info {
@@ -1854,8 +1880,49 @@ footer {
         .header-info {
             display: none;
         }
+        .header-icons {
+            .saved-icon {
+                svg {
+                    width: 36px;
+                    height: 36px;
+                }
+            }
+        }
         .burger {
             display: block;
+            width: 30px;
+            height: 25px;
+        }
+        .burger span:nth-of-type(2) {
+            top: 50%;
+            transform: translateY(-50%);
+            transform-origin: left center;
+        }
+
+        .burger span:nth-of-type(3) {
+            top: 100%;
+            transform-origin: left center;
+            transform: translateY(-100%);
+        }
+
+        .burger input:checked ~ span:nth-of-type(1) {
+            transform: rotate(45deg);
+            top: 0px;
+            left: 4px;
+        }
+
+        .burger input:checked ~ span:nth-of-type(2) {
+            width: 0%;
+            opacity: 0;
+        }
+
+        .burger input:checked ~ span:nth-of-type(3) {
+            transform: rotate(-45deg);
+            top: 21.2px;
+            left: 4px;
+        }
+        .lang {
+            display: none;
         }
     }
     .mein-menu {
@@ -2089,6 +2156,9 @@ footer {
 }
 
 @media (max-width: 490px) {
+    #mobile-nav {
+        top: 63.19px;
+    }
     .section-header {
         .brand-logo-main {
             p {

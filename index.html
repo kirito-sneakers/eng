@@ -71,13 +71,8 @@
             <a href="">asd</a>
             <a href="">asd</a>
         </div>
-        <div>
-
-        </div>
-        <div>
-
-        </div>
     </nav>
+    <div class="overlay"></div>
         <section class="seo-text visually-hidden">
             <p>Kirito Sneakers — це онлайн-магазин реплік кросівок преміум-якості. У нас ви знайдете репліки Balenciaga, Rick Owens та інших люкс-брендів за доступними цінами з доставкою по Україні та світу.</p>
         </section>
@@ -169,7 +164,7 @@
                 </div>
             </div>
             <a href="./saved.html" class="saved-icon">
-                <svg style="width: 30px; height: 30px;" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                     <g id="SVGRepo_iconCarrier"> 
@@ -218,6 +213,7 @@
 
 const burger = document.querySelector('#burger');
 const mbNav = document.querySelector('#mobile-nav');
+const overlay = document.querySelector('.overlay');
 
 let lastScroll = 0;
 let scrollTop = 0;
@@ -236,19 +232,17 @@ window.addEventListener('scroll', () => {
   lastScroll = currentScroll;
 });
 
-burger.addEventListener('click', () => {
-  const isOpen = mbNav.classList.toggle('nav-opened');
+overlay.addEventListener('click', () => {
+    closeMenu();
+    mbNav.classList.remove('nav-opened');
+    burger.checked = false
+})
 
-  if (isOpen) {
-    scrollTop = window.scrollY;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollTop}px`;
-    document.body.style.width = '100%';
-    header.classList.remove('hide');
-  } else {
+function closeMenu() {
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.width = '';
+    overlay.classList.remove('nav-opened')
 
     // 🔥 Ключ: отключаем smooth scroll
     document.documentElement.style.scrollBehavior = 'auto';
@@ -258,6 +252,20 @@ burger.addEventListener('click', () => {
     setTimeout(() => {
       document.documentElement.style.scrollBehavior = '';
     }, 0);
+}
+
+burger.addEventListener('click', () => {
+  const isOpen = mbNav.classList.toggle('nav-opened');
+
+  if (isOpen) {
+    scrollTop = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollTop}px`;
+    document.body.style.width = '100%';
+    header.classList.remove('hide');
+    overlay.classList.add('nav-opened');
+  } else {
+    closeMenu();
   }
 });
 

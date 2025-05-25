@@ -64,20 +64,6 @@
     </head>
     
 <body>
-    <nav id="mobile-nav" class="">
-        <div class="oswald-medium">menu</div>
-        <a href="" class="montserrat-light">Store</a>
-        <a href="" class="montserrat-light">About us</a>
-        <a href="" class="montserrat-light">Contact us</a>
-        <div class="oswald-medium">brands</div>
-        <a href="" class="montserrat-light">Balenciaga</a>
-        <a href="" class="montserrat-light">Rick Owens</a>
-        <div class="oswald-medium">Language</div>
-        <a href="" class="montserrat-light">Eng</a>
-        <a href="" class="montserrat-light">Ukr</a>
-        <a href="" class="montserrat-light">Rus</a>
-    </nav>
-    <div class="overlay"></div>
         <section class="seo-text visually-hidden">
             <p>Kirito Sneakers — це онлайн-магазин реплік кросівок преміум-якості. У нас ви знайдете репліки Balenciaga, Rick Owens та інших люкс-брендів за доступними цінами з доставкою по Україні та світу.</p>
         </section>
@@ -216,25 +202,30 @@
     `;
     document.querySelector('body').append(footer);
 
-    // const mobileNav = document.createElement('nav');
-    // mobileNav.id = 'mobile-nav';
-    // mobileNav.className = '';
-    // mobileNav.innerHTML = `
-    //     <div>
-    //         <div>asdasdasd</div>
-    //         <a href="">asd</a>
-    //         <a href="">asd</a>
-    //         <a href="">asd</a>
-    //     </div>
-    // `;
+    const mobileNav = document.createElement('nav');
+    mobileNav.id = 'mobile-nav';
+    mobileNav.className = '';
+    mobileNav.innerHTML = `
+        <div class="oswald-medium">menu</div>
+        <a href="./" class="montserrat-light">Store</a>
+        <a href="./info.html" class="montserrat-light">About us</a>
+        <a href="https://t.me/kirito_ls" class="montserrat-light" target="_blank">Contact us</a>
+        <div class="oswald-medium">brands</div>
+        <a href="./balenciaga" class="montserrat-light">Balenciaga</a>
+        <a href="./rick-owens" class="montserrat-light">Rick Owens</a>
+        <div class="oswald-medium">Language</div>
+        <a data-lang='eng' class="montserrat-light">Eng</a>
+        <a data-lang='' class="montserrat-light">Ukr</a>
+        <a data-lang='eng' class="montserrat-light">Rus</a>
+    `;
 
     // // Создаём overlay
-    // const mobileOverlay = document.createElement('div');
-    // mobileOverlay.className = 'overlay';
+    const mobileOverlay = document.createElement('div');
+    mobileOverlay.className = 'overlay';
 
     // // Добавляем в body
-    // document.body.appendChild(mobileNav);
-    // document.body.appendChild(mobileOverlay);
+    document.body.appendChild(mobileNav);
+    document.body.appendChild(mobileOverlay);
 
 const burger = document.querySelector('#burger');
 const mbNav = document.querySelector('#mobile-nav');
@@ -293,6 +284,29 @@ burger.addEventListener('click', () => {
     closeMenu();
   }
 });
+
+function switchLanguage(newLang) {
+  const currentUrl = window.location.href;
+
+  // Заменяем /eng/ или /rus/ на пустую строку, если выбран 'ukr'
+  let newUrl = newLang
+    ? currentUrl.replace(/\/(eng|ukr|rus)\//, `/${newLang}/`)
+    : currentUrl.replace(/\/(eng|ukr|rus)\//, '/');
+
+  if (newUrl !== currentUrl) {
+    window.location.href = newUrl;
+  }
+}
+
+
+  // Навешиваем обработчик на все <a data-lang>
+  document.querySelectorAll('a[data-lang]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // отменяем переход по href="#"
+      const lang = this.getAttribute('data-lang');
+      switchLanguage(lang);
+    });
+  });
 
 
 

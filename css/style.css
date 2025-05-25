@@ -80,6 +80,7 @@ main {
         text-decoration: none;
         color: black;
         flex-shrink: 0;
+        cursor: pointer;
     }
 }
 
@@ -1306,6 +1307,7 @@ header {
         background-color: rgba(255, 255, 255, 1);
         min-width: 150px;
         z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ✅ лёгкая тень */
 
         a {
             text-decoration: none;
@@ -1325,7 +1327,6 @@ header {
         display: none;
         flex-direction: column;
         background-color: white;
-        border: 1px solid #ccc;
         min-width: 70px;
         z-index: 1000;
     }

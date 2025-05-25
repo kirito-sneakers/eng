@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
             <span></span>
         </label>
         <nav class="header-info">
-            <a href="/" class="montserrat-light underline-animated">Home</a>
+            <a href="./" class="montserrat-light underline-animated">Home</a>
             <a href="./../info.html" class="montserrat-light underline-animated">About us</a>
             <a href="https://t.me/kirito_ls" class="montserrat-light underline-animated" target="_blank">Contact us</a>
             <div class="dropdown">

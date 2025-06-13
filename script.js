@@ -22,6 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 <div class="dropdown-menu">
                     <a href="/eng/balenciaga" class="montserrat-light underline-animated dd">Balenciaga</a>
                     <a href="/eng/rick-owens" class="montserrat-light underline-animated dd">Rick Owens</a>
+                    <a href="/eng/maison-margiela" class="montserrat-light underline-animated dd">Maison Margiela</a>
                 </div>
             </div>
         </nav>
@@ -104,6 +105,7 @@ window.addEventListener('DOMContentLoaded', () => {
         <div class="oswald-medium">brands</div>
         <a href="/eng/balenciaga" class="montserrat-light">Balenciaga</a>
         <a href="/eng/rick-owens" class="montserrat-light">Rick Owens</a>
+        <a href="/eng/maison-margiela" class="montserrat-light">Maison Margiela</a>
         <div class="oswald-medium">Language</div>
         <a data-lang='eng' class="montserrat-light">Eng</a>
         <a data-lang='ukr' class="montserrat-light">Ukr</a>
